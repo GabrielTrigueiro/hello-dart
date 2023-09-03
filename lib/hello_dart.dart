@@ -1,5 +1,3 @@
-export 'src/hello_dart_base.dart';
-
 //variaveis nao podem ser indefinidas
 //se eu quiser usar uma var em uma func a var deve ser instanciada antes da func
 void main() {
