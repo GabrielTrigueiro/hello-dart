@@ -1,4 +1,6 @@
 //trabalhando com herança
+import 'package:hello_dart/bolo-polimorfo.dart';
+
 class Alimento{
   String nome;
   double peso;
@@ -26,12 +28,25 @@ class Salgados extends Alimento{
   Salgados(String nome, double peso, String cor, this.carne):super(nome, peso, cor);
 }
 
-class Frutas extends Alimento{
+class Frutas extends Alimento implements Bolo{
   bool? isMadura;
   int diasDesdeColheita;
   Frutas(String nome, double peso, String cor, this.isMadura, this.diasDesdeColheita):super(nome, peso, cor);
   funcEstaMadura() {
     isMadura = diasDesdeColheita >= 30;
+  }
+
+  @override
+  void separarIngredientes() {
+    print('Catar a fruta');
+  }
+  @override
+  void fazerMassa() {
+    print('Misturar a fruta com farinha, açúcar, ovos...');
+  }
+  @override
+  void assar() {
+    print('Colocar no forno');
   }
 }
 
